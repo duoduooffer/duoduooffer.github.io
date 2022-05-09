@@ -1,99 +1,144 @@
----
-title: "About"
-permalink: "/about/"
-layout: page
----
+# Free React landing page template
 
-## Installation
+![Open React template preview](https://user-images.githubusercontent.com/2683512/78789364-545e7100-79ad-11ea-9e3c-9528c99cda8e.png)
 
-Just fork this [repository](https://github.com/niklasbuschmann/contrast) and adjust the `_config.yml` to use with [Github Pages](https://pages.github.com/) and your page is done.
+**Open** is a **free React landing page template designed** for developers/makers who want to create a quick and professional landing page for their open source projects, SaaS products, online services, and more.
 
-## Features
+Use it for whatever you want, and be sure to reach us out on [Twitter](https://twitter.com/Cruip_com) if you build anything cool/useful with it.
 
- - supports dark mode on macOS Mojave
- - optional sidebar
- - MathJax support
- - no external ressources
- - included archive page
- - supports pagination
- - feed generation
- - responsive
- - syntax highlighting
- - supports comments via [disqus](https://disqus.com/) or [isso](http://posativ.org/isso/)
+Created and maintained with ❤️ by [Cruip.com](https://cruip.com).
 
-## Based on
+## Live demo
 
-- [Hyde](https://github.com/poole/hyde)
-- [Minima](https://github.com/jekyll/minima)
-- [Lagrange](https://github.com/LeNPaul/Lagrange)
-- [Font Awesome](http://fontawesome.io/)
-- [KaTeX](https://katex.org/)
-- [Pygments](https://github.com/richleland/pygments-css)
+Check the live demo here 👉️ [https://open.cruip.com/](https://open.cruip.com/)
 
-## Installation (jekyll-remote-theme method)
+## Open PRO
 
-You can use this theme with the `jekyll-remote-theme` plugin. Just create an empty repo, copy over the `index.html` file and add this to your `_config.yml`:
+[![Open Pro](https://user-images.githubusercontent.com/2683512/151177673-e56ade57-c98d-4c37-b315-d313bd14bb53.png)](https://cruip.com/)
 
-```yaml
-remote_theme: niklasbuschmann/contrast@v2.11
+*The premium template is built on-the-top of [Tailwind CSS](https://tailwindcss.com/), and React components have been re-built from scratch.* 
 
-plugins:
-  - jekyll-remote-theme
-```
+## Design files
 
-Note: to enable icons you also need to copy over the `_data` folder.
+If you need the design files, you can download them from Figma's Community 👉 https://bit.ly/3BjiEtQ
 
-## Config
+## Table of contents
 
-Your `_config.yml` could for example look like this:
+* [Usage](#usage)
+  * [Available Scripts](#available-scripts)
+    * [npm start](#npm-start)
+    * [npm test](#npm-test)
+    * [npm run build](#npm-run-build)
+    * [npm run eject](#npm-run-eject)
+  * [Learn More](#learn-more)
+    * [Code Splitting](#code-splitting)
+    * [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+    * [Making a Progressive Web App](#making-a-progressive-web-app)
+    * [Advanced Configuration](#advanced-configuration)
+    * [Deployment](#deployment)
+    * [npm run build fails to minify](#npm-run-build-fails-to-minify)
+  * [Google Analytics Setup](#google-analytics-setup)
+* [Credits](#credits)
+* [Terms and License](#terms-and-license)
+* [About Us](#about-us)
+* [Stay in the loop](#stay-in-the-loop)
 
-```yaml
-title: "Blog Title"
-author: "Blog Author"
-description: "My personal blog about ... something"
-permalink: /:title/
-lang: "en"
-excerpt_separator: "\n\n\n"
-date_format: "%B %d, %Y"
+## Usage
 
-# Layout
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-show_excerpts: true        # show article excerpts on the home page
-show_frame: true           # adds a gray frame to the site
-show_sidebar: false        # show a sidebar instead of the usual header
+### Available Scripts
 
-# Menu
+In the project directory, you can run:
 
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {file: "index.html"}
-  - {file: "README.md"}
+#### `npm install`
+To install the dependencies package.
 
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:niklasbuschmann@users.noreply.github.com"}
-  - {title: Github, icon: github, url: "https://github.com/niklasbuschmann/contrast"}
-  - {title: Subscribe, icon: rss, url: "/feed.xml"}
+#### `npm start`
 
-comments:
-#  disqus_shortname: ""    # see https://disqus.com/
-#  isso_domain: ""         # see https://posativ.org/isso/
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-plugins:
- - jekyll-feed
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-```
+#### `npm test`
 
-## MathJax
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Contrast comes preinstalled with a leightweight alternative to MathJax called [KaTeX](https://katex.org/). To display equations in a post simply set `mathjax: true` in the article's front matter.
+#### `npm run build`
 
-## License
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-[public domain](http://unlicense.org/)
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-## Screenshots
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-![screenshot](https://user-images.githubusercontent.com/4943215/109431850-cd711780-7a08-11eb-8601-2763f2ee6bb4.png)
+#### `npm run eject`
 
-![screenshot](https://user-images.githubusercontent.com/4943215/109431832-b6cac080-7a08-11eb-9c5e-a058680c23a1.png)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-![screenshot](https://user-images.githubusercontent.com/4943215/73125194-5f0b8b80-3fa4-11ea-805c-8387187503ad.png)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+### Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+#### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+#### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+#### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+#### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+#### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+#### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Google Analytics Setup
+
+This template uses the [React Google Analytics Module](https://github.com/react-ga/react-ga).
+
+In order to track visitors, you need to set an [environment variable](https://create-react-app.dev/docs/adding-custom-environment-variables/) called `REACT_APP_GA_CODE` storing your [GA Tracking ID](https://support.google.com/analytics/answer/7372977).
+
+## Credits
+
+- [Nucleo](https://nucleoapp.com/)
+- [Unsplash](https://unsplash.com/)
+
+## Terms and License
+
+- Released under the [GPL](https://www.gnu.org/licenses/gpl-3.0.html).
+- Copyright 2020 [Cruip](https://cruip.com/).
+- Use it for personal and commercial projects, but please don’t republish, redistribute, or resell the template.
+- Attribution is not required, although it is really appreciated.
+
+## About Us
+
+We're an Italian developer/designer duo creating high-quality design/code resources for developers, makers, and startups.
+
+## Stay in the loop
+
+If you would like to know when we release new resources, you can follow us on [Twitter](https://twitter.com/Cruip_com), or you can subscribe to our monthly [newsletter](https://cruip.com/#subscribe).
