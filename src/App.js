@@ -1,44 +1,49 @@
-import React, { useRef, useEffect } from 'react';
-import { useLocation, Switch } from 'react-router-dom';
-import AppRoute from './utils/AppRoute';
-import ScrollReveal from './utils/ScrollReveal';
-import ReactGA from 'react-ga';
+import React, { useState, useEffect } from "react";
+import Preloader from "../src/components/Pre";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Projects from "./components/Projects/Projects";
+import Footer from "./components/Footer";
+import Resume from "./components/Resume/ResumeNew";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate
+} from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import "./style.css";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-// Layouts
-import LayoutDefault from './layouts/LayoutDefault';
-
-// Views 
-import Home from './views/Home';
-
-// Initialize Google Analytics
-ReactGA.initialize(process.env.REACT_APP_GA_CODE);
-
-const trackPage = page => {
-  ReactGA.set({ page });
-  ReactGA.pageview(page);
-};
-
-const App = () => {
-
-  const childRef = useRef();
-  let location = useLocation();
+function App() {
+  const [load, upadateLoad] = useState(true);
 
   useEffect(() => {
-    const page = location.pathname;
-    document.body.classList.add('is-loaded')
-    childRef.current.init();
-    trackPage(page);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location]);
+    const timer = setTimeout(() => {
+      upadateLoad(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <ScrollReveal
-      ref={childRef}
-      children={() => (
-        <Switch>
-          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-        </Switch>
-      )} />
+    <Router>
+      <Preloader load={load} />
+      <div className="App" id={load ? "no-scroll" : "scroll"}>
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="*" element={<Navigate to="/"/>} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
